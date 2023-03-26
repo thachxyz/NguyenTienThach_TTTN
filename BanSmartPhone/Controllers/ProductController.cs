@@ -42,7 +42,7 @@ namespace BanSmartPhone.Controllers
         /*Endchitietsanpham*/
 
 
-        public IActionResult Index(int page ,string query, string cat, string sort)
+        public IActionResult Index(string query, string cat, string sort)
         {
 
             ProductViewModel productViewModel= new ProductViewModel();
