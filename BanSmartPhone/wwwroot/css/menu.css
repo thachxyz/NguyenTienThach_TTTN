@@ -1,0 +1,52 @@
+﻿
+/* -------------------------phan tiem kiem tong quat--------------------------------*/
+.menu {
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    width: 12.375rem;
+    height: 28.5rem;
+    z-index: 980;
+}
+/*so item len la con cua item nho*/
+.menu .menuitem {    
+    color: black;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+
+}
+.menu .menuitem .item1 {
+        height: 2rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        -webkit-justify-content: start;
+        justify-content: start;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+}
+
+.menu .menuitem .item1 .item2 {
+        width: 22px;
+        height: 22px;
+}
+
+.menu .menuitem .item1 .item2 .item3 {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        
+}
+
