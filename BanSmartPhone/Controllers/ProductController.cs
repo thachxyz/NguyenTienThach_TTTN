@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using BanSmartPhone.Contant;
 using System.Linq;
+using X.PagedList;
 
 namespace BanSmartPhone.Controllers
 {
@@ -42,7 +43,7 @@ namespace BanSmartPhone.Controllers
         /*Endchitietsanpham*/
 
 
-        public IActionResult Index(string query, string cat, string sort)
+        public IActionResult Index(string query, string cat, string sort,int? page, int pageSize =3)
         {
 
             ProductViewModel productViewModel= new ProductViewModel();
@@ -68,15 +69,14 @@ namespace BanSmartPhone.Controllers
                 }
 
             }
-            List<Product> products=  quer.Include(image => image.Images).ToList();
-            productViewModel.Products = products;
+
+     
+            productViewModel.Products = quer.Include(image => image.Images).ToPagedList(page ?? 1, pageSize);
             productViewModel.Sort = sort;
             productViewModel.Cat = cat;
-
-            int pageSize = 3;
-            int pageNumber = (page ?? 1);
-            return View(students.ToPagedList(pageNumber, pageSize));
-
+            productViewModel.Query = query;
+            productViewModel.Page = page??1;
+            productViewModel.pageSize = pageSize;
             return View(productViewModel);
         }
         [HttpGet]
@@ -99,7 +99,6 @@ namespace BanSmartPhone.Controllers
             product.UpdatedAt=DateTime.Now;
             product.Detail= model.Detail;
             product.Alias= Uri.EscapeDataString(model.Alias);
-
 
             Image image = new Image();
             string wwwRootPath = _hostEnvironment.WebRootPath;

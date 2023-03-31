@@ -33,7 +33,7 @@ namespace DAO.Service
         public User getByUserName(string userName)
         {
            User user = db.Users.FirstOrDefault(p => p.UserName!.Equals(userName))!;
-            return user;
+           return user;
         }
 
         public List<User> getAll()
