@@ -72,6 +72,11 @@ namespace BanSmartPhone.Controllers
             productViewModel.Products = products;
             productViewModel.Sort = sort;
             productViewModel.Cat = cat;
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(students.ToPagedList(pageNumber, pageSize));
+
             return View(productViewModel);
         }
         [HttpGet]
@@ -113,5 +118,6 @@ namespace BanSmartPhone.Controllers
             await _context.SaveChangesAsync();
             return View(model);
         }
+        
     }
 }
