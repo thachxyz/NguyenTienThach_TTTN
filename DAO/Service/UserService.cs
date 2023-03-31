@@ -33,7 +33,7 @@ namespace DAO.Service
         public User getByUserName(string userName)
         {
            User user = db.Users.FirstOrDefault(p => p.UserName!.Equals(userName))!;
-            return user;
+           return user;
         }
 
         public List<User> getAll()
@@ -43,8 +43,8 @@ namespace DAO.Service
 
         public void save(User model)
         {
-         db.Users.Add(model);
-         db.SaveChanges();
+            db.Users.Add(model);
+            db.SaveChanges();
 
         }
 
