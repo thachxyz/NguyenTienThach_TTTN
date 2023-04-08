@@ -83,7 +83,8 @@ namespace BanSmartPhone.Controllers
             ProductCreateViewModel model = new ProductCreateViewModel();
             return View(model);
         }
-            [HttpPost]
+        [Route("taosp")]
+        [HttpPost]
         public async Task<IActionResult> Create(ProductCreateViewModel model)
         {
             Product product= new Product();

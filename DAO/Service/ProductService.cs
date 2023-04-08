@@ -5,7 +5,7 @@ using X.PagedList;
 
 namespace DAO.Service
 {
-    public class ProductService : BaseService<Product>
+    public class ProductService 
     {
         private readonly TienThachContext _context;
 
@@ -18,9 +18,9 @@ namespace DAO.Service
             throw new NotImplementedException();
         }
 
-        public Product get(int id)
+        public Product get(long id)
         {
-            throw new NotImplementedException();
+            return  _context.Products.Include(p => p.Category).Include(p => p.Images).Include(p => p.Brand).FirstOrDefault(e=>e.Id == id);
         }
 
         public List<Product> getAll()
@@ -43,7 +43,14 @@ namespace DAO.Service
 
         public void update(Product model)
         {
-            throw new NotImplementedException();
+          var entity =   _context.Products.FirstOrDefault(e=>e.Id == model.Id);
+           
+            entity.BrandId = model.BrandId;
+            entity.Price = model.Price;
+            entity.NameProduct = model.NameProduct;
+            entity.SalePrice = model.SalePrice;
+            _context.SaveChanges();
+
         }
     }
 }

@@ -1,0 +1,70 @@
+﻿@model ProductCreateViewModel
+
+
+
+
+
+
+<div class="row mx-3"> 
+    <div class="col-md-4">
+        <form asp-action="Edit" class="bg-white p-3 rounded-3" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nhan Hang</label>
+                <select asp-for="BrandId" class="form-select" asp-items="Model.BrandsList">
+                    <option value=""></option>
+
+                </select>
+            </div>
+            <div class="mb-3 ">
+                <label for="exampleFormControlInput1" class="form-label">Loai Hang</label>
+                <select asp-for="CategoryId" class="form-select" asp-items="Model.CategoriesList">
+                    <option value=""></option>
+
+                </select>
+
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">ten san pham</label>
+                <input asp-for="NameProduct" class=" form-control" />
+                <span asp-validation-for="NameProduct" class="text-danger"></span>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">gia san pham</label>
+                <input asp-for="Price" class=" form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">gia giam</label>
+                <input asp-for="SalePrice" class=" form-control" />
+                <span asp-validation-for="SalePrice" class="text-danger"></span>
+            </div>
+           
+            <div class="mb-3 ">
+                <label class="form-label">mo ta san pham</label>
+                <textarea asp-for="Detail" class="  form-control" cols="5" ></textarea>
+                <span asp-validation-for="Detail" class="text-danger"></span>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">ten khong giau</label>
+                <input asp-for="Alias" class="  form-control" />
+                <span asp-validation-for="Alias" class="text-danger"></span>
+            </div>
+            <div class="row">
+                @foreach(var image in Model.Images)
+                {
+                    <div> <img src="@image.Image1"/></div>
+                }
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">anh san pham</label>
+                <input asp-for="ImageFile" class="  form-control-file" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <input type="submit" value="Edit" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>

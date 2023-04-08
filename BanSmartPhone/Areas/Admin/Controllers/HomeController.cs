@@ -27,11 +27,7 @@ namespace BanSmartPhone.Areas.Admin.Controllers
 
         [Route("trang-chu")]
         public IActionResult Index()
-        {
-            
-           
-
-
+        {           
 
             return View();
         }
