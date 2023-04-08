@@ -1,4 +1,3 @@
-
 using BanSmartPhone;
 using DAO;
 using Microsoft.EntityFrameworkCore;

@@ -34,7 +34,6 @@ namespace BanSmartPhone.Controllers
 		[Route("chi-tiet-san-pham")]
 		public IActionResult Detail(string alias)
         {
-           
             Product products = _context.Products.Where(p=>p.Alias.Equals(alias)).Include(p=>p.Images).Include(p=>p.Brand).Include(p => p.Category).FirstOrDefault();
             return View(products);
         }
