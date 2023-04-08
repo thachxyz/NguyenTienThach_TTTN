@@ -23,10 +23,7 @@ namespace BanSmartPhone.Controllers
         private readonly ILogger<ProductController> _logger;
         private readonly TienThachContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
-        
-
-        
-
+ 
         public ProductController(ILogger<ProductController> logger, TienThachContext context, IWebHostEnvironment hostEnvironment)
         {
             _logger = logger;
