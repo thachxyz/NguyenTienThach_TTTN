@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BanSmartPhone", "BanSmartPhone\BanSmartPhone.csproj", "{202A82A5-7C07-4D7C-9AB0-3B98E9F6C9F4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAO", "DAO\DAO.csproj", "{D1BD6C30-586C-4F22-8F6C-7576CDC1F888}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BanSmartPhone", "BanSmartPhone\BanSmartPhone.csproj", "{F49DA7B6-E33E-425D-8E97-C8273A20CBE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{202A82A5-7C07-4D7C-9AB0-3B98E9F6C9F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{202A82A5-7C07-4D7C-9AB0-3B98E9F6C9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{202A82A5-7C07-4D7C-9AB0-3B98E9F6C9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{202A82A5-7C07-4D7C-9AB0-3B98E9F6C9F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D1BD6C30-586C-4F22-8F6C-7576CDC1F888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D1BD6C30-586C-4F22-8F6C-7576CDC1F888}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1BD6C30-586C-4F22-8F6C-7576CDC1F888}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1BD6C30-586C-4F22-8F6C-7576CDC1F888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49DA7B6-E33E-425D-8E97-C8273A20CBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49DA7B6-E33E-425D-8E97-C8273A20CBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49DA7B6-E33E-425D-8E97-C8273A20CBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49DA7B6-E33E-425D-8E97-C8273A20CBE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
