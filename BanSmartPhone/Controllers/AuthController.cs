@@ -4,15 +4,17 @@ using DAO.Service;
 using Microsoft.AspNetCore.Mvc;
 namespace BanSmartPhone.Controllers
 {
+	[Route("xac-thuc")]
 	public class AuthController : Controller 
 	{
-
+		[Route("dang-nhap")]
 		[HttpGet]
 		public IActionResult Login()
 		{ 
 		return View();
 		}
         [HttpPost]
+		
 		public IActionResult Login(LoginModel model)
 		{
 			var dao = new UserService();
@@ -38,7 +40,8 @@ namespace BanSmartPhone.Controllers
 
 			return View();
 		}
-        [HttpGet]
+		[Route("dang-ky")]
+		[HttpGet]
         public IActionResult Register()
         {
             return View();

@@ -11,7 +11,9 @@ using X.PagedList;
 
 namespace BanSmartPhone.Controllers
 {
-    public class HomeController : Controller
+	
+	[Route("")]
+	public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly TienThachContext _context;
@@ -21,9 +23,11 @@ namespace BanSmartPhone.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int? page, int pageSize = 4)
+		[Route("")]
+		public IActionResult Index(int? page, int pageSize = 4)
         {
-            HomeViewModel home = new HomeViewModel();
+			
+			HomeViewModel home = new HomeViewModel();
 
             home.HotProducts = _context.Products.Include(image => image.Images).ToPagedList(page ?? 1, pageSize);
             home.Categories = _context.Categories.ToList();
@@ -33,19 +37,19 @@ namespace BanSmartPhone.Controllers
             return View(home);
         }
 
+        
+		//public IActionResult Privacy()
+  //      {
+  //          return View();
+  //      }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+  //      [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 
 
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+  //      public IActionResult Error()
+  //      {
+  //          return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+  //      }
         
 
 

@@ -21,8 +21,15 @@ namespace BanSmartPhone.Controllers
         }
         public IActionResult Index()
         {
-            var cart = _context.Carts.Where(c=>c.UserId == _siteContext.CurrentUser.Id).Include(p=>p.Product).ThenInclude(p=>p.Images).ToList();
-            return View(cart);
+
+
+            if (_siteContext.CurrentUser == null) { 
+                return RedirectToAction("Login","Auth");
+            }
+
+				var cart = _context.Carts.Where(c => c.UserId == _siteContext.CurrentUser.Id).Include(p => p.Product).ThenInclude(p => p.Images).ToList();
+				return View(cart);
+			
         }
 
         public IActionResult Add(Cart model)
@@ -50,8 +57,6 @@ namespace BanSmartPhone.Controllers
         [HttpGet]
         public IActionResult CheckOut()
         {
-            
-
             return View();
         }
         [HttpPost]

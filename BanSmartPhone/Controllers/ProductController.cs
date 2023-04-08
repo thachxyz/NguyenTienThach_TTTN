@@ -15,9 +15,9 @@ using X.PagedList;
 
 namespace BanSmartPhone.Controllers
 {
-  
-    
 
+
+    [Route("san-pham")]
     public class ProductController : Controller
     {
         private readonly ILogger<ProductController> _logger;
@@ -33,17 +33,18 @@ namespace BanSmartPhone.Controllers
             _context = context;
             _hostEnvironment = hostEnvironment;
         }
-        /*chitietsanpham*/
-        public IActionResult Detail(string alias)
+		/*chitietsanpham*/
+		[Route("chi-tiet-san-pham")]
+		public IActionResult Detail(string alias)
         {
            
             Product products = _context.Products.Where(p=>p.Alias.Equals(alias)).Include(p=>p.Images).Include(p=>p.Brand).Include(p => p.Category).FirstOrDefault();
             return View(products);
         }
-        /*Endchitietsanpham*/
+		/*Endchitietsanpham*/
 
-
-        public IActionResult Index(string query, string cat, string sort,int? page, int pageSize =3)
+		[Route("")]
+		public IActionResult Index(string query, string cat, string sort,int? page, int pageSize =3)
         {
 
             ProductViewModel productViewModel= new ProductViewModel();
@@ -79,7 +80,8 @@ namespace BanSmartPhone.Controllers
             productViewModel.pageSize = pageSize;
             return View(productViewModel);
         }
-        [HttpGet]
+        [Route("taosp")]
+		[HttpGet]
         public async Task<IActionResult> Create()
         {
             ProductCreateViewModel model = new ProductCreateViewModel();
