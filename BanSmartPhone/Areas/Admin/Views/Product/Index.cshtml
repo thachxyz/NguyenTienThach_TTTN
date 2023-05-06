@@ -49,7 +49,7 @@
                                      <td>
                                          <div>
                                                 <img src="@item.Images.ToArray()[0].Image1" class="avatar avatar-sm me-3 border-radius-lg" alt="anh">
-                                            </div>  
+                                         </div>  
                                             
                                     </td>
                                     <td>
@@ -71,9 +71,9 @@
                                         </a>
                                     </td>
                                     <td class="align-middle">
-                                        <a href="javascript:;" class="text-primary text-center font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user">
-                                            Delete
-                                        </a>
+                                        <form asp-action="Delete" method="post" asp-route-id="@item.Id"  onsubmit="return confirm('ban co muon xoa cai nay khong')"  class="text-primary text-center font-weight-bold text-xs" >
+                                           <input value="Xoa" type="submit"/>
+                                        </form>
                                     </td>
                                 </tr>}
                                

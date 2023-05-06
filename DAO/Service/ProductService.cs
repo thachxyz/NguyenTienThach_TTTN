@@ -13,9 +13,12 @@ namespace DAO.Service
             _context = new TienThachContext();
         }
 
-        public void delete(Product model)
+        public void delete(long id)
         {
-            throw new NotImplementedException();
+            var entity = _context.Products.Include(e=>e.Images).FirstOrDefault(e => e.Id == id);
+
+            _context.Products.Remove(entity);
+            _context.SaveChanges();
         }
 
         public Product get(long id)
@@ -38,7 +41,8 @@ namespace DAO.Service
 
         public void save(Product model)
         {
-            throw new NotImplementedException();
+            _context.Products.Add(model);
+            _context.SaveChanges();
         }
 
         public void update(Product model)
